@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SreeKML Boutique</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f9f5f1;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #8b2e5d;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: white;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd5e5;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 85vh;
+      background: url('heroimg.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 700px;
+      padding: 30px;
+    }
+
+    .hero-content h2 {
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      text-align: center;
+      margin: 60px 0 30px;
+      font-size: 36px;
+      color: #8b2e5d;
+    }
+
+    /* COLLECTION CARDS */
+    .cards {
+      width: 90%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      padding-bottom: 50px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: #8b2e5d;
+    }
+
+    /* CATALOG SECTION */
+    .catalog-section {
+      display: none;
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .catalog-item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .catalog-item:hover {
+      transform: scale(1.03);
+    }
+
+    .catalog-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .catalog-item p {
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      width: 90%;
+      margin: 80px auto;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .founder-image img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #8b2e5d;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    .about-text h3 {
+      color: #8b2e5d;
+      margin-bottom: 15px;
+      font-size: 30px;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #8b2e5d;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+
+    .contact p {
+      margin: 12px 0;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #5e1f3f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* MOBILE */
+    @media(max-width:768px) {
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-content h2 {
+        font-size: 34px;
+      }
+
+      .hero-content p {
+        font-size: 17px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
+      .founder-image img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+
+    <h1>SreeKML Boutique</h1>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h2>SreeKML Fashions & Designer Wear</h2>
+
+      <p>
+        Discover timeless elegance with our exclusive saree and boutique collections crafted for every occasion.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- COLLECTIONS -->
+  <h2 class="section-title" id="collections">Our Collections</h2>
+
+  <div class="cards">
+
+    <div class="card" onclick="showCatalog('Maggam Blouses')">
+      <img src="https://hyderabad.ksethnic.com/blouse/2025/07/royal-radiance-green-net-designer-bridal-wedding-blouse-1.webp">
+      <div class="card-content">
+        <h3>Maggam Blouses</h3>
+        <p>Elegant handcrafted blouse designs</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="showCatalog('Designer collections')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDY1Qy24_bWf6ntRHgvkwpIgM7ZtUEAp4kw&s">
+      <div class="card-content">
+        <h3>Designer Frocks</h3>
+        <p>Modern and stylish collections</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="showCatalog('Party Wear')">
+      <img src="https://i.pinimg.com/736x/bc/1c/a5/bc1ca5841d46aba4e69911e7c52b3d8a.jpg">
+      <div class="card-content">
+        <h3>Party Wear</h3>
+        <p>Perfect outfits for celebrations</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="showCatalog('Bridal Collection')">
+      <img src="https://cdn.shopify.com/s/files/1/0683/1800/3511/files/white_saree_bride_480x480.jpg?v=1691565347">
+      <div class="card-content">
+        <h3>Bridal Collection</h3>
+        <p>Exclusive bridal blouse designs</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="showCatalog('Embroidary Blouses')">
+      <img src="https://dailybuyys.com/cdn/shop/products/WhatsAppImage2023-02-08at3.45.06PM-1.jpg">
+      <div class="card-content">
+        <h3>Embroidery Blouses</h3>
+        <p>Designer embroidery blouse collections</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATALOG SECTION -->
+  <section class="catalog-section" id="catalogSection">
+
+    <h2 class="section-title" id="catalogTitle">Collection</h2>
+
+    <div class="catalog-grid" id="catalogGrid"></div>
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+
+    <h2 class="section-title">About Us</h2>
+
+    <div class="about-container">
+
+      <div class="founder-image">
+        <img src="foun.jpeg" alt="Founder">
+      </div>
+
+      <div class="about-text">
+
+        <h3>Founder - Sridevi Emandi</h3>
+
+        <p>
+          Welcome to SreeKML Boutique. We specialize in premium sarees,
+          designer wear, bridal collections, maggam work blouses,
+          and handcrafted embroidery designs.
+        </p>
+
+        <p>
+          Our mission is to bring elegance, tradition, and modern fashion
+          together for every woman. Each outfit is carefully curated
+          with quality fabrics and timeless craftsmanship.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p> Venkateshwaracomplex ,sujathanagar📍</p>
+    <p>📞 +91 8519888019</p>
+    <p>📧 sreekmlboutique@gmail.com</p>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 SreeKML Boutique | All Rights Reserved
+  </footer>
+
+  <script>
+
+    const collections = {
+
+      "Maggam Blouses": [
+        "https://cdn0.weddingwire.in/article/0060/original/1280/jpg/100600-maggam-work-blouse-designs-6.jpeg",
+        "https://www.wedandbeyond.com/blog/wp-content/uploads/2018/10/37.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQby7gMy60UByZ_otyrLmpxYc5VBpA_JkSqNg&s"
+      ],
+
+      "Designer collections": [
+        "https://images.pexels.com/photos/1755428/pexels-photo-1755428.jpeg",
+        "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiiQ2bH5xsW9QJ-bZg2z_CQk8dz7SERlq3Pg&s"
+      ],
+
+      "Party Wear": [
+        "https://stylady.in/cdn/shop/files/photo_2024-08-01_18-46-09.jpg?v=1723972575",
+        "https://media.samyakk.com/pub/media/catalog/product/g/r/green-crepe-crop-top-suit-with-lapel-collar-gh5110.jpg"
+      ],
+
+      "Bridal Collection": [
+        "https://cdn0.weddingwire.in/article/1006/original/1280/jpg/126001-bridal-blouse-designs-sabyasachi-mukherjee.jpeg",
+        "https://rpdfashion.com/cdn/shop/files/Bridal-Wear-Heavy-Embroidery-Blouse-_-Rich-Golden-Thread-Work_-RPD-Fashion-800879718.webp",
+        "https://www.shaadidukaan.com/vogue/wp-content/uploads/2023/08/image-1.png"
+      ],
+
+      "Embroidary Blouses": [
+        "https://jisboutique.com/cdn/shop/files/392.jpg?v=1768997279",
+        "https://weaverstory.com/cdn/shop/products/220709-19-1368-Copy.jpg?v=1757158733&width=1500"
+      ]
+
+    };
+
+    function showCatalog(category) {
+
+      const catalogSection = document.getElementById("catalogSection");
+      const catalogGrid = document.getElementById("catalogGrid");
+      const catalogTitle = document.getElementById("catalogTitle");
+
+      catalogSection.style.display = "block";
+
+      catalogTitle.innerHTML = category;
+
+      catalogGrid.innerHTML = "";
+
+      const images = collections[category];
+
+      images.forEach((img, index) => {
+
+        catalogGrid.innerHTML += `
+
+          <div class="catalog-item">
+
+            <img src="${img}" alt="${category} ${index + 1}">
+
+            <p>${category} Design ${index + 1}</p>
+
+          </div>
+
+        `;
+
+      });
+
+      catalogSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>
+```
+
+Replace `founder.jpg` with your own founder image inside your project folder.
