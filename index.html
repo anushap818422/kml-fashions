@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +57,10 @@
     /* HERO SECTION */
     .hero {
       height: 85vh;
+
+      /* CHANGE YOUR IMAGE NAME HERE */
       background: url('heroimg.jpg') center/cover no-repeat;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -67,6 +69,7 @@
       position: relative;
     }
 
+    /* DARK OVERLAY */
     .hero::before {
       content: "";
       position: absolute;
@@ -176,46 +179,100 @@
       font-weight: bold;
     }
 
-    /* ABOUT SECTION */
-    .about {
-      width: 90%;
-      margin: 80px auto;
-    }
+   /* ABOUT SECTION */
 
-    .about-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
+.about{
+  width:90%;
+  margin:90px auto;
+}
 
-    .founder-image img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 6px solid #8b2e5d;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
+.about-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+  background:white;
+  padding:50px;
+  border-radius:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
 
-    .about-text {
-      max-width: 600px;
-    }
+.founder-image{
+  text-align:center;
+  flex:1;
+}
 
-    .about-text h3 {
-      color: #8b2e5d;
-      margin-bottom: 15px;
-      font-size: 30px;
-    }
+.founder-image img{
+  width:320px;
+  height:380px;
+  object-fit:cover;
+  border-radius:20px;
+  border:5px solid #8b2e5d;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  transition:0.4s;
+}
 
-    .about-text p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
+.founder-image img:hover{
+  transform:scale(1.03);
+}
 
+.founder-name{
+  margin-top:18px;
+}
+
+.founder-name h3{
+  color:#8b2e5d;
+  font-size:28px;
+  margin-bottom:5px;
+}
+
+.founder-name p{
+  color:#666;
+  font-size:16px;
+}
+
+.about-content{
+  flex:1.3;
+}
+
+.about-content h2{
+  font-size:38px;
+  color:#8b2e5d;
+  margin-bottom:20px;
+  line-height:1.3;
+}
+
+.about-content p{
+  font-size:18px;
+  line-height:1.9;
+  color:#444;
+  margin-bottom:18px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+  .about-container{
+    flex-direction:column;
+    padding:30px 20px;
+    text-align:center;
+  }
+
+  .founder-image img{
+    width:240px;
+    height:300px;
+  }
+
+  .about-content h2{
+    font-size:28px;
+  }
+
+  .about-content p{
+    font-size:16px;
+  }
+
+}
     /* CONTACT */
     .contact {
       background: #8b2e5d;
@@ -242,7 +299,7 @@
       padding: 15px;
     }
 
-    /* MOBILE */
+    /* MOBILE RESPONSIVE */
     @media(max-width:768px) {
 
       nav {
@@ -265,20 +322,6 @@
 
       .section-title {
         font-size: 28px;
-      }
-
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .about-text {
-        text-align: center;
-      }
-
-      .founder-image img {
-        width: 220px;
-        height: 220px;
       }
     }
   </style>
@@ -320,44 +363,64 @@
 
   <div class="cards">
 
+    <!-- CARD 1 -->
     <div class="card" onclick="showCatalog('Maggam Blouses')">
+
       <img src="https://hyderabad.ksethnic.com/blouse/2025/07/royal-radiance-green-net-designer-bridal-wedding-blouse-1.webp">
+
       <div class="card-content">
         <h3>Maggam Blouses</h3>
         <p>Elegant handcrafted blouse designs</p>
       </div>
+
     </div>
 
+    <!-- CARD 2 -->
     <div class="card" onclick="showCatalog('Designer collections')">
+
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDY1Qy24_bWf6ntRHgvkwpIgM7ZtUEAp4kw&s">
+
       <div class="card-content">
         <h3>Designer Frocks</h3>
-        <p>Modern and stylish collections</p>
+        <p>Modern and stylish saree collections</p>
       </div>
+
     </div>
 
+    <!-- CARD 3 -->
     <div class="card" onclick="showCatalog('Party Wear')">
+
       <img src="https://i.pinimg.com/736x/bc/1c/a5/bc1ca5841d46aba4e69911e7c52b3d8a.jpg">
+
       <div class="card-content">
         <h3>Party Wear</h3>
         <p>Perfect outfits for celebrations</p>
       </div>
+
     </div>
 
+    <!-- CARD 4 -->
     <div class="card" onclick="showCatalog('Bridal Collection')">
+
       <img src="https://cdn.shopify.com/s/files/1/0683/1800/3511/files/white_saree_bride_480x480.jpg?v=1691565347">
+
       <div class="card-content">
         <h3>Bridal Collection</h3>
-        <p>Exclusive bridal blouse designs</p>
+        <p>Exclusive bridal sarees & dresses</p>
       </div>
+
     </div>
 
+    <!-- CARD 5 -->
     <div class="card" onclick="showCatalog('Embroidary Blouses')">
+
       <img src="https://dailybuyys.com/cdn/shop/products/WhatsAppImage2023-02-08at3.45.06PM-1.jpg">
+
       <div class="card-content">
         <h3>Embroidery Blouses</h3>
-        <p>Designer embroidery blouse collections</p>
+        <p>Comfortable daily wear collections</p>
       </div>
+
     </div>
 
   </div>
@@ -371,45 +434,62 @@
 
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section class="about" id="about">
+ 
+   <!-- ABOUT SECTION -->
+<section class="about" id="about">
 
-    <h2 class="section-title">About Us</h2>
+  <h2 class="section-title">About Us</h2>
 
-    <div class="about-container">
+  <div class="about-container">
 
-      <div class="founder-image">
-        <img src="foun.jpeg" alt="Founder">
-      </div>
+    <!-- LEFT SIDE - FOUNDER IMAGE -->
+    <div class="founder-image">
 
-      <div class="about-text">
+      <img src="foun.jpeg" alt="Founder">
 
-        <h3>Founder - Sridevi Emandi</h3>
-
-        <p>
-          Welcome to SreeKML Boutique. We specialize in premium sarees,
-          designer wear, bridal collections, maggam work blouses,
-          and handcrafted embroidery designs.
-        </p>
-
-        <p>
-          Our mission is to bring elegance, tradition, and modern fashion
-          together for every woman. Each outfit is carefully curated
-          with quality fabrics and timeless craftsmanship.
-        </p>
-
+      <div class="founder-name">
+        <h3>Sridevi Emandi</h3>
+        <p>Founder of SreeKML Boutique</p>
       </div>
 
     </div>
 
-  </section>
+    <!-- RIGHT SIDE - CONTENT -->
+    <div class="about-content">
+
+      <h2>Elegance Crafted With Passion</h2>
+
+      <p>
+        Welcome to <strong>SreeKML Boutique</strong>, where tradition meets
+        modern elegance. We specialize in premium sarees, bridal collections,
+        maggam work blouses, embroidery designs, and designer wear curated
+        for every special occasion.
+      </p>
+
+      <p>
+        Every design reflects timeless craftsmanship, rich fabrics,
+        and attention to detail. Our boutique is dedicated to making
+        every woman feel confident, graceful, and beautiful.
+      </p>
+
+      <p>
+        Under the vision of our founder <strong>Sridevi Emandi</strong>,
+        SreeKML Boutique continues to bring unique fashion collections
+        that celebrate Indian tradition with contemporary style.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
 
     <h2>Contact Us</h2>
 
-    <p> Venkateshwaracomplex ,sujathanagar📍</p>
+    <p>📍 Venkateshwaracomplex , sujathanagar, visakhapatnam</p>
     <p>📞 +91 8519888019</p>
     <p>📧 sreekmlboutique@gmail.com</p>
 
@@ -420,39 +500,8 @@
     © 2026 SreeKML Boutique | All Rights Reserved
   </footer>
 
+  <!-- JAVASCRIPT -->
   <script>
-
-    const collections = {
-
-      "Maggam Blouses": [
-        "https://cdn0.weddingwire.in/article/0060/original/1280/jpg/100600-maggam-work-blouse-designs-6.jpeg",
-        "https://www.wedandbeyond.com/blog/wp-content/uploads/2018/10/37.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQby7gMy60UByZ_otyrLmpxYc5VBpA_JkSqNg&s"
-      ],
-
-      "Designer collections": [
-        "https://images.pexels.com/photos/1755428/pexels-photo-1755428.jpeg",
-        "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiiQ2bH5xsW9QJ-bZg2z_CQk8dz7SERlq3Pg&s"
-      ],
-
-      "Party Wear": [
-        "https://stylady.in/cdn/shop/files/photo_2024-08-01_18-46-09.jpg?v=1723972575",
-        "https://media.samyakk.com/pub/media/catalog/product/g/r/green-crepe-crop-top-suit-with-lapel-collar-gh5110.jpg"
-      ],
-
-      "Bridal Collection": [
-        "https://cdn0.weddingwire.in/article/1006/original/1280/jpg/126001-bridal-blouse-designs-sabyasachi-mukherjee.jpeg",
-        "https://rpdfashion.com/cdn/shop/files/Bridal-Wear-Heavy-Embroidery-Blouse-_-Rich-Golden-Thread-Work_-RPD-Fashion-800879718.webp",
-        "https://www.shaadidukaan.com/vogue/wp-content/uploads/2023/08/image-1.png"
-      ],
-
-      "Embroidary Blouses": [
-        "https://jisboutique.com/cdn/shop/files/392.jpg?v=1768997279",
-        "https://weaverstory.com/cdn/shop/products/220709-19-1368-Copy.jpg?v=1757158733&width=1500"
-      ]
-
-    };
 
     function showCatalog(category) {
 
@@ -466,23 +515,20 @@
 
       catalogGrid.innerHTML = "";
 
-      const images = collections[category];
-
-      images.forEach((img, index) => {
+      for (let i = 1; i <= 20; i++) {
 
         catalogGrid.innerHTML += `
 
           <div class="catalog-item">
 
-            <img src="${img}" alt="${category} ${index + 1}">
+            <img src="https://picsum.photos/300/400?random=${category + i}">
 
-            <p>${category} Design ${index + 1}</p>
+            <p>${category} Design ${i}</p>
 
           </div>
 
         `;
-
-      });
+      }
 
       catalogSection.scrollIntoView({
         behavior: 'smooth'
@@ -490,10 +536,193 @@
     }
 
   </script>
+  <!-- REPLACE YOUR CURRENT JAVASCRIPT WITH THIS -->
+
+<script>
+
+  /* =========================
+     IMAGE COLLECTIONS
+     ========================= */
+
+  const collections = {
+
+    "Maggam Blouses": [
+
+      "https://cdn0.weddingwire.in/article/0060/original/1280/jpg/100600-maggam-work-blouse-designs-6.jpeg",
+      "https://www.wedandbeyond.com/blog/wp-content/uploads/2018/10/37.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQby7gMy60UByZ_otyrLmpxYc5VBpA_JkSqNg&s",
+      "https://cdn0.weddingwire.in/article/9905/original/1280/jpg/125099-maggam-work-blouse-designs-anushree-reddy.jpeg",
+      "https://www.wedandbeyond.com/blog/wp-content/uploads/2018/10/38.jpg",
+      "https://i.etsystatic.com/38070864/r/il/3ccc49/4229722774/il_300x300.4229722774_g4nj.jpg",
+      "https://i.pinimg.com/736x/b4/b9/b5/b4b9b5ec35ed8c0b82d00aaa96354dcc.jpg",
+      "https://tipsandbeauty.com/wp-content/uploads/2020/01/Heavy-velvet-maggam-temple-style-work-blouse.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7q4xtcYvnEP7oQZgrBBxEbLgF1XIcHuNSBw&s",
+      "https://www.aariworkblouse.com/wp-content/uploads/2020/10/aariwork-blouse-bridal-blouse-design206.jpg",
+
+      "https://stylesatlife.com/wp-content/uploads/2022/01/heavy-maggam-work-blouse-for-bridal.jpg",
+      "https://i.etsystatic.com/39295592/r/il/766c06/7125628813/il_570xN.7125628813_anpr.jpg",
+      "https://www.wedandbeyond.com/blog/wp-content/uploads/2018/10/8-1.jpg",
+      "https://www.amazingtailors.com/wp-content/uploads/2023/10/08-amazing-tailors20230621_123859-white.jpg",
+      "https://shanmukhadesigners.com/wp-content/uploads/2024/01/604-1024x1024.jpg",
+      "https://stylesatlife.com/wp-content/uploads/2019/09/Heavy-Maggam-Work-Blouse-Designs.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx3IV6E0rccDm3jq0k4AQ3VwkvngXh6g--mw&s",
+      "https://efashiontribe.com/wp-content/uploads/2023/03/maggam-work-pink-saree-blouse-1.webp",
+      "https://i.pinimg.com/236x/4a/9d/fb/4a9dfb7d075707ecd87eddbbbead0780.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuPfIuEuaYMs8xYJsFwQkZveaczqBEc5OCGw&s"
+
+    ],
+
+    "Designer collections": [
+
+      "https://images.pexels.com/photos/1755428/pexels-photo-1755428.jpeg",
+      "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiiQ2bH5xsW9QJ-bZg2z_CQk8dz7SERlq3Pg&s",
+
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEeLY7lhMlW9Xuhz4wrANd23gMptzXCmrszA&s",
+      "https://images.meesho.com/images/products/539359056/5ko3u_512.avif?width=512",
+      "https://www.anantexports.in/cdn/shop/files/IMG-20240422-WA0239.jpg?v=1774795629",
+      "https://snazzyhunt.com/cdn/shop/products/ADM-VIS-GOWN-DN-3-MYL.jpg?v=1696181034&width=1445",
+      "https://kohsh.in/cdn/shop/products/Copy_of__DSC6549-Edit-scaled.jpg?v=1742625035",
+      "https://5.imimg.com/data5/SELLER/Default/2023/5/310932793/NL/RI/NR/66774151/gown-1--1000x1000.jpeg",
+
+      "https://snazzyhunt.com/cdn/shop/products/ADM-VIS-GOWN-DN-1-PK.jpg?v=1664128693&width=1445",
+      "https://5.imimg.com/data5/ANDROID/Default/2020/11/BT/TT/LA/94572825/product-jpeg-1000x1000.jpeg",
+      "https://www.libas.in/cdn/shop/files/29578_5Main_d74844a7-8348-4621-bc68-749f7c199756.jpg?v=1755939367&width=1080",
+      "https://www.anitadongre.com/dw/image/v2/BGCX_PRD/on/demandware.static/-/Sites-masterCatalog_AD_India/default/dwc55d8d69/images/hires/F25/Women/S26PP10_PowderBlue_1.jpg?sw=850&sh=1275&sm=fit&strip=false",
+      "https://anayadesignerstudio.com/cdn/shop/files/Designer-Gown-With-Long-Jacket-For-Girls.jpg?v=1714615558&width=600",
+      "https://www.pinkblueindia.com/wp-content/uploads/2021/04/blue-wedding-party-gown-women-1024x1024.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuoFP4qdlMbPO64ymGT1XIm8pvN7Vgt6PUVg&s",
+      "https://i.pinimg.com/236x/b7/8d/38/b78d38444694f5d3041329ab947a3242.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaxlxBPuSN0mIqeOFDvTmAAbH7FwRJ7p4Fng&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSudXUWFgDZAEuet-TR1xWsaN9UaFLMG5GmXg&s"
+
+    ],
+
+    "Party Wear": [
+
+      "https://stylady.in/cdn/shop/files/photo_2024-08-01_18-46-09.jpg?v=1723972575",
+      "https://media.samyakk.com/pub/media/catalog/product/g/r/green-crepe-crop-top-suit-with-lapel-collar-gh5110.jpg",
+      "https://i.pinimg.com/474x/09/45/b9/0945b9d2f480e21940db1b047ca1ac32.jpg?nii=t",
+      "https://www.soosi.co.in/cdn/shop/products/WhatsAppImage2021-12-17at14.36.14_580x.jpg?v=1639764270",
+      "https://img105.savana.com/goods-pic/3da2fae4aed748c2bdc03a21f35cc98dUR_w540_h720_q85.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Wwa7KrYbzHW_ss7Lwf7Bk2UgllkLVju0fg&s",
+      "https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-onionpink-sequins-net-designer-gown-gnrm0040513_onion_pink_1_6.jpg?v=1733835508",
+      "https://www.pinkblueindia.com/wp-content/uploads/2021/04/blue-wedding-party-gown-women.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR35J64slQs7H0Wa000lI_0gmbYRmWOFbaB5w&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD1hc-I0wZAnsAuEJVKASNKaYzk-SowI49bA&s",
+
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU16x_Fp0nPpG6YLlACJiISO2MkH41_gt0Og&s",
+      "https://img.faballey.com/images/Product/AIS01069Z/d3.jpg",
+      "https://images.asos-media.com/products/asos-design-sequin-embellished-backless-cami-top-in-cream-part-of-a-set/210104275-2/?$n_480w$&wid=476&fit=constrain",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTMmJgw5oIRXZv_vd77XQh7HiPVfbhx-YwTw&s",
+      "https://content.jdmagicbox.com/quickquotes/images_main/women-s-party-gown-long-sleeve-lace-803443069-ia19qmnb.jpg?impolicy=queryparam&im=Resize=(360,360),aspect=fit",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVfpEcQ4yOks4nLqZwOI9qE6YvmROHZvsQxQ&s",
+      "https://cdn.shopify.com/s/files/1/0049/3649/9315/files/koskii-mauve-silverstonework-net-designer-gown-gnrm0039502_mauve_1_6.jpg?v=1733835732",
+      "https://manyavar.scene7.com/is/image/manyavar/PSB006_439-INDIGO+BLUE_101.4904_24-12-2024-10-47:283x395?&dpr=on,2",
+      "https://shahifits.in/wp-content/uploads/2025/05/Elegant-White-Gown-For-Women-Party-Wear-scaled.jpg",
+      "https://shahifits.in/wp-content/uploads/2025/06/Indo-Western-Party-Wear-For-Ladies-Mehendi-Colour-scaled.jpg"
+
+    ],
+
+   "Bridal Collection": [
+
+  "https://empress-clothing.com/cdn/shop/files/TT138.jpg?v=1734518310",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiiQ2bH5xsW9QJ-bZg2z_CQk8dz7SERlq3Pg&s",
+  "https://ik.imagekit.io/4sjmoqtje/tr:w-1000,c-at_max/cdn/shop/files/gold-bridal-lehenga-with-heavy-zari-and-sequin-detailing-sg326774-1.jpg?v=1753267244",
+  "https://assets.panashindia.com/media/catalog/product/cache/1/image/479x671/9df78eab33525d08d6e5fb8d27136e95/3/6/3684lg04-13009.jpg",
+  "https://www.anantexports.in/cdn/shop/files/IMG-20240127_101941.jpg?v=1774787917&width=1500",
+
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1SO08Kwkg7OAnTHP-sdPd05JUvtPph7Yhlg&s",
+  "https://5.imimg.com/data5/NH/NW/VN/SELLER-15399851/bridesmaids-maroon-velvet-embroidered-work-bridal-wear-lehenga-choli.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNv2XjW2Yerbq9VGVPudFtSvPuciFtYQW1VA&s",
+  "https://media.samyakk.in/pub/media/catalog/product/l/i/light-cream-sequins-embroidered-georgette-wedding-lehenga-with-sleeveless-blouse-aa3566-a.jpg",
+  "https://anayadesignerstudio.com/cdn/shop/files/latest-bridal-lehenga-designs-2023.jpg?v=1714619912&width=1100",
+
+  "https://diademstore.com/cdn/shop/files/ChatGPTImageApr17_2026_04_44_52PM.png?v=1776424587",
+  "https://dollyjstudio.com/cdn/shop/files/1660_1.jpg?v=1753191957&width=2048",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTr1VXIZBkmBEdztVV_GHiVBGbM3V1JgplfA&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPOT54xtGaJg30_jfmfPR9g4ErQxZmOAQGTQ&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHI-tDXo_8P6xIiX55MCB5MMOYDEci4BOhDQ&s",
+
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKIrSmlI3aC_4AzPoUrNxjiaRdzllD8sMHHQ&s",
+  "https://imgs-aashniandco.gumlet.io/pub/media/catalog/product/cache/af07caf8c8bf4be6f623b827abceb68f/b/u/buy_gold_embellished_lehenga_set_by_seema_gujral__1_.jpg?w=400&v1.0",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMnlsgbtaAh1wM_LSKld2jUwnFKtF_xLZCCg&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpW_6IGWH6R8wwa7OG04P_GxuyUwEEz-_hwg&s",
+  "https://i0.wp.com/www.womansplaza.com/wp-content/uploads/2024/07/3-1-1.webp?ssl=1"
+
+],
+
+    "Embroidary Blouses": [
+
+      "https://jisboutique.com/cdn/shop/files/392.jpg?v=1768997279",
+      "https://weaverstory.com/cdn/shop/products/220709-19-1368-Copy.jpg?v=1757158733&width=1500",
+      "https://dailybuyys.com/cdn/shop/files/WhatsAppImage2023-05-12at1.17.53PM_1.jpg",
+      "https://dailybuyys.com/cdn/shop/files/blouse6.jpg",
+      "https://keevaaexports.b-cdn.net/images/product/sub_images/2025/06/ynf-cotton-kesh426-geeta-10-readymade-blouses-wholesale-sequence-embroidery-blouse-designer-blouse-cotton-blouse-manufacturer-1-2025-06-29_10_54_19.jpeg",
+      "https://sudathi.com/cdn/shop/files/51B761_5.jpg?v=1754466410&width=1500",
+      "https://uttariya.com/cdn/shop/files/UTTB33-3.jpg?v=1742190514",
+      "https://dailybuyys.com/cdn/shop/products/f83020c6-ca56-4eb0-a553-ae1828d890ae.jpg",
+      "https://sudathi.com/cdn/shop/files/60B970_2.jpg?v=1754466288&width=1500",
+      "https://weaverstory.com/cdn/shop/products/220709-31-1544.jpg?v=1757158730&width=1500",
+
+      "https://assets.myntassets.com/w_200,q_50,,dpr_3,fl_progressive,f_webp/assets/images/2026/JANUARY/23/ln6fjGe3_f390af283a334c96abfd102af9e5147f.jpg",
+      "https://rpdfashion.com/cdn/shop/files/Bridal-Wear-Heavy-Embroidery-Blouse-_-Rich-Golden-Thread-Work_-RPD-Fashion-800879718.webp",
+      "https://www.shaadidukaan.com/vogue/wp-content/uploads/2023/08/image-1.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuDTHq-REntnY7g8OYsyKHZYU0lyyO1f8_Q&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHwo_uGXVaTeKVjcVEZ6bIhK7QDHMc6rsv0g&s",
+      "https://cdn.shopify.com/s/files/1/0654/5152/4353/files/Binks_Saree-Blouse_KiaraGold_1_large.jpg?v=1758001340",
+      "https://www.postoast.com/wp-content/uploads/2024/03/Backless-simple-embroidery-bridal-blouse-designs.jpg",
+      "https://www.trendbuy.co.in/cdn/shop/files/khadi-cotton-embroidered-blouse-for-women-party-wear-view-6.jpg?v=1767179987",
+      "https://cdn0.weddingwire.in/article/1006/original/1280/jpg/126001-bridal-blouse-designs-sabyasachi-mukherjee.jpeg",
+      "https://assets.ajio.com/medias/sys_master/root1/20251023/V6rq/68fa148cd3b48604f841264b/-473Wx593H-702416202-black-MODEL.jpg"
+
+    ]
+
+  };
+
+
+  /* =========================
+     SHOW CATALOG
+     ========================= */
+
+  function showCatalog(category) {
+
+    const catalogSection = document.getElementById("catalogSection");
+    const catalogGrid = document.getElementById("catalogGrid");
+    const catalogTitle = document.getElementById("catalogTitle");
+
+    catalogSection.style.display = "block";
+
+    catalogTitle.innerHTML = category;
+
+    catalogGrid.innerHTML = "";
+
+    const images = collections[category];
+
+    images.forEach((img, index) => {
+
+      catalogGrid.innerHTML += `
+
+        <div class="catalog-item">
+
+          <img src="${img}" alt="${category} ${index + 1}">
+
+          <p>${category} Design ${index + 1}</p>
+
+        </div>
+
+      `;
+
+    });
+
+    catalogSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+
+  }
+
+</script>
 
 </body>
 
 </html>
-```
-
-Replace `founder.jpg` with your own founder image inside your project folder.
